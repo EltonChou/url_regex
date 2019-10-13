@@ -40,10 +40,7 @@ class UrlRegex:
     @property
     def detect(self):
         """ Checks if string includes one or more links """
-        if re.search(self.regex, self.input.lower()):
-            return True
-        else:
-            return False
+        return re.search(self.regex, self.input.lower()) is not None
 
     @property
     def links(self):
